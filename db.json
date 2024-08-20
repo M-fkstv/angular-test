@@ -1,3 +1,29 @@
 {
-  "countries": []
+  "countries": [
+    {
+      "id": "1724195791174",
+      "name": "Poland",
+      "updating": false
+    },
+    {
+      "id": "1724195794593",
+      "name": "Russia",
+      "updating": false
+    },
+    {
+      "id": "1724195807091",
+      "name": "Ukraine",
+      "updating": false
+    },
+    {
+      "id": "1724195818010",
+      "name": "Latvia",
+      "updating": false
+    },
+    {
+      "id": "1724195840861",
+      "name": "Lithuania",
+      "updating": false
+    }
+  ]
 }
