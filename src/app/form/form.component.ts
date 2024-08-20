@@ -28,19 +28,12 @@ import { CountryComponent } from '../country/country.component';
   styleUrl: './form.component.scss',
 })
 export class FormComponent {
-  form: FormGroup;
   constructor(
     private CountriesService: CountriesService,
     private fb: FormBuilder,
-  ) {
-    this.form = fb.group({
-      name: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(12),
-        Validators.minLength(2),
-      ]),
-    });
-  }
+  ) {}
+
+  public form = new FormGroup({ countryName: new FormControl('') });
 
   public countries: Country[] = [];
 
@@ -56,10 +49,10 @@ export class FormComponent {
 
   public postCountry() {
     if (this.form.invalid) return;
-    this.CountriesService.postCountry(this.form.value.name).subscribe(() =>
-      this.getCountries(),
-    );
-    return this.form.setValue({ name: '' });
+    this.CountriesService.postCountry(
+      this.form.get(['countryName'])?.value,
+    ).subscribe(() => this.getCountries());
+    return this.form.setValue({ countryName: '' });
   }
 
   public deleteCountry(id: string) {
