@@ -1,0 +1,33 @@
+<mat-list>
+  @for (country of countries; track country.id) {
+    @if (!country.updating) {
+      <mat-list-item [id]="country.id">
+        {{ country.name }}
+        <button mat-stroked-button (click)="confirmDelete(country.id)">
+          Удалить
+        </button>
+        <button mat-stroked-button (click)="editCountry(country)">
+          Изменить
+        </button>
+      </mat-list-item>
+    } @else {
+      <mat-form-field>
+        <mat-label>Измените название</mat-label>
+        <input
+          type="text"
+          [formControl]="newCountry"
+          required
+          minlength="2"
+          maxlength="252"
+          matInput
+          name="value"
+        />
+      </mat-form-field>
+      <button mat-stroked-button (click)="updateCountry(country)">
+        Изменить
+      </button>
+    }
+  }
+</mat-list>
+
+

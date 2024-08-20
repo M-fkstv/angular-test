@@ -1,0 +1,27 @@
+<div class="form">
+  <form [formGroup]="form" (ngSubmit)="postCountry()">
+    <mat-form-field>
+      <mat-label>Введите название</mat-label>
+      <input
+        type="text"
+        formControlName="name"
+        required
+        minlength="2"
+        maxlength="252"
+        matInput
+        name="value"
+      />
+      <br />
+    </mat-form-field>
+
+    <button mat-stroked-button>Добавить</button>
+  </form>
+
+  
+    <app-country
+      [countries]="countries"
+      (countryChange)="countryChange($event)"
+      (countryDelete)="deleteCountry($event)"
+    ></app-country>
+  
+</div>
