@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -28,10 +22,7 @@ import { CountryComponent } from '../country/country.component';
   styleUrl: './form.component.scss',
 })
 export class FormComponent {
-  constructor(
-    private CountriesService: CountriesService,
-    private fb: FormBuilder,
-  ) {}
+  constructor(private CountriesService: CountriesService) {}
 
   public form = new FormGroup({ countryName: new FormControl('') });
 
