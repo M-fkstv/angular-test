@@ -13,4 +13,4 @@
 
 ## Запуск JSON-server
 
-Для запуска JSON-server выполните команду `npx json-server --watch db.json --port 4000`. Перейдя в брузере по адресу `http://localhost:4000/` Вы увидите пустой массив, в дальнейшем в него будут добавляться наши страны.
+Для запуска JSON-server выполните команду `npx json-server --watch db.json --port 4000`
